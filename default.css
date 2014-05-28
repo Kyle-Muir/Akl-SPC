@@ -1,0 +1,213 @@
+.alpha {
+	margin-left: 0;
+}
+
+.omega {
+  margin-right: 0;
+}
+
+.grid-1,
+.grid-2,
+.grid-3,
+.grid-4,
+.grid-5,
+.grid-6,
+.grid-7,
+.grid-8,
+.grid-9,
+.grid-10,
+.grid-11,
+.grid-12,
+.grid-13,
+.grid-14,
+.grid-15,
+.grid-16 {
+  display: inline;
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.container-16 .grid-1 {
+  width: 40px;
+}
+
+.container-16 .grid-2 {
+  width: 100px;
+}
+
+.container-16 .grid-3 {
+  width: 160px;
+}
+
+.container-16 .grid-4 {
+  width: 220px;
+}
+
+.container-16 .grid-5 {
+  width: 280px;
+}
+
+.container-16 .grid-6 {
+  width: 340px;
+}
+
+.container-16 .grid-7 {
+  width: 400px;
+}
+
+.container-16 .grid-8 {
+  width: 460px;
+}
+
+.container-16 .grid-9 {
+  width: 520px;
+}
+
+.container-16 .grid-10 {
+  width: 580px;
+}
+
+.container-16 .grid-11 {
+  width: 640px;
+}
+
+.container-16 .grid-12 {
+  width: 704px;
+}
+
+.container-16 .grid-13 {
+  width: 760px;
+}
+
+.container-16 .grid-14 {
+  width: 820px;
+}
+
+.container-16 .grid-15 {
+  width: 880px;
+}
+
+.container-16 .grid-16 {
+  width: 940px;
+}
+
+
+.container-12 .grid-1 {
+  width: 60px;
+}
+
+.container-12 .grid-2 {
+  width: 140px;
+}
+
+.container-12 .grid-3 {
+  width: 180px;
+}
+
+.container-12 .grid-4 {
+  width: 300px;
+}
+
+.container-12 .grid-5 {
+  width: 380px;
+}
+
+.container-12 .grid-6 {
+  width: 460px;
+}
+
+.container-12 .grid-7 {
+  width: 540px;
+}
+
+.container-12 .grid-8 {
+  width: 620px;
+}
+
+.container-12 .grid-9 {
+  width: 700px;
+}
+
+.container-12 .grid-10 {
+  width: 780px;
+}
+
+.container-12 .grid-11 {
+  width: 860px;
+}
+
+.container-12 .grid-12 {
+  width: 940px;
+}
+
+.movie {
+	height:275px;
+	margin-right: 6px;
+}
+
+.movie img {
+	width:150px;
+	height:225px;
+}
+
+
+.filter-bar h2 {
+	font-size: 16px;
+	color: #000;
+	background: url('images/icon-minus-grey.png') transparent no-repeat left center;
+	padding: 5px 0 5px 24px;
+	margin-bottom: 5px;
+	border-top: 1px solid #ccc;
+}
+
+.filter-bar ul {
+	margin: 0 0 20px 24px;
+}
+
+.filter-bar .category-collapsed h2 {
+	background: url('images/icon-plus-grey.png') transparent no-repeat left center;
+}
+
+.videos-search {
+	margin-bottom: 10px;
+	border: 1px solid #ABABAB;
+	padding: 2px 0 2px 5px;
+}
+
+.videos-search input[type=text] {
+	width: 180px;
+	margin: 0;
+	padding: 0;
+	height: 22px;
+	border: 0;
+}
+
+.videos-search input[type=submit] {
+	width: 26px;
+	min-width: 26px;
+	height: 24px;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background: #fff url('images/icon-search.png') no-repeat 50% 50% !important;
+	text-indent: -9999px;
+}
+
+#s4-workspace a, #s4-workspace a:active, #s4-workspace a:visited, #s4-workspace a.ms-link:visited {
+	color: #008272;
+	text-decoration: none;	
+}
+
+#s4-workspace a:hover, #s4-workspace a.ms-link:hover {
+	color: #00bcf2;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}

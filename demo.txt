@@ -30,7 +30,7 @@
                     </a>
                     <div data-bind="visible: isExpanded" class="filter-item-criteria">
                         <ul data-bind="foreach: subItems">
-                            <li><a data-bind="text: $data" style="cursor: pointer"></a></li>
+                            <li><a data-bind="text: value, click: $root.toggleFilter" style="cursor: pointer"></a></li>
                         </ul>
                     </div>
                 </div>

@@ -29,26 +29,40 @@ var ViewModel = function() {
 	}
 	
 	self.populateFilterCategories = function() {
-		var ratings = _.uniq(_.pluck(self.movies(), 'rating'));
+		//pull all ratings off the movies gathered and create new categories for them.
+    	var ratings = _.uniq(_.pluck(self.allMovies(), 'rating'));
+    	ratings = ratings.map(function(item){return {name: 'rating', value: item}})
 		self.filterCategories.push(new Category('Rating', true, ratings));
-		var releaseDate = _.uniq(_.pluck(self.movies(), 'releaseDate'));
+
+		//pull all release dates off the movies gathered and create new categories for them.
+		var releaseDate = _.uniq(_.pluck(self.allMovies(), 'releaseDate'));
+       	releaseDate = releaseDate.map(function(item){return {name: 'releaseDate', value: item}})
 		self.filterCategories.push(new Category('Release Date', false, releaseDate));
 	}
 	
 	self.search = function() {
 		var term = self.searchTerms().toLowerCase().replace('*', '').trim();
-		var searchResults = _.filter(this.allMovies(), function(movie) {
+		var searchResults = _.filter(self.movies(), function(movie) { //search runs on the filtered set.
 			var containsTitle = movie.title && movie.title.toLowerCase().indexOf(term) !== -1;
 			var containsRating = movie.rating && movie.rating.toLowerCase().indexOf(term) !== -1;
 			var containsReleaseDate = movie.releaseDate && movie.releaseDate.toLowerCase().indexOf(term) !== -1;
 			
 			return containsTitle || containsRating || containsReleaseDate;
 		});
-		self.movies(searchResults);
+		if (searchResults.length > 0) { //if we have results, set them.
+			self.movies(searchResults); 
+		}
 	}
 	
 	self.clearFilters = function() {
 		self.movies(self.allMovies());
+	}
+
+	self.toggleFilter = function(filter) {
+		var filteredItems = _.filter(self.allMovies(), function(movie) {
+			return movie[filter.name] === filter.value;
+		});
+		self.movies(filteredItems);
 	}
 }
 
@@ -72,13 +86,13 @@ var MovieModel = function(title, description, rating, releaseDate, thumbnail, tr
 	this.title = title;
 	this.description = $('<div />').html(description).text() //pulls text out of rich text areas, removes unwanted mark up.
 	this.rating = rating;
-	this.releaseDate = new Date(releaseDate).toDateString();
+	this.releaseDate = new Date(releaseDate).toDateString(); //friendly dates!
 	this.thumbnail = thumbnail;
 	this.trailerLink = trailerLink;
 }
 
-$(function() {
-	var viewModel = new ViewModel();
-	viewModel.populate();
-	ko.applyBindings(viewModel, $('#movies')[0]);
+$(function() { 										//document ready hooks
+	var viewModel = new ViewModel(); 				//create viewmodel
+	viewModel.populate(); 							//populate it
+	ko.applyBindings(viewModel, $('#movies')[0]); 	//bind it to the UI
 });

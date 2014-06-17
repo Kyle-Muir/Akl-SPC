@@ -1,6 +1,6 @@
 Add-PsSnapIn Microsoft.SharePoint.PowerShell -ErrorAction SilentlyContinue
 
-$siteUrl = "http://sp2013vm/sites/test123" #your site address here
+$siteUrl = "http://sp2013vm" #your site address here
 
 $web = Get-SPWeb $siteUrl
 $list = $web.Lists.TryGetList("Movies")

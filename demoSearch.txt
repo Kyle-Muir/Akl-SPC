@@ -1,0 +1,44 @@
+<link href="/Style%20Library/Styles/reset.css" rel="stylesheet" type="text/css">
+<link href="/Style%20Library/Styles/default.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="/Style%20Library/Scripts/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="/Style%20Library/Scripts/knockout-3.1.0.js"></script>
+<script type="text/javascript" src="/Style%20Library/Scripts/underscore-min.js"></script>
+<script type="text/javascript" src="/Style%20Library/Scripts/appSearch.js"></script>
+<div>
+    <div id="movies" class="container-16">
+        <div class="grid-12 alpha">
+            <div data-bind="foreach: movies">
+        		<div class="grid-3 alpha movie">
+        			<a data-bind="attr: { href: trailerLink }">
+        				<img data-bind="attr: { src: thumbnail }"/>
+        			</a>
+
+        			<a data-bind="attr: { href: trailerLink }">
+        				<h3 data-bind="text: title"></h3>
+        			</a>
+        		</div>
+        	</div>
+        </div>
+        <div class="filter-bar grid-4">
+        	<div class="videos-search">
+                <input type="text" data-bind="value: searchTerms" placeholder="Find Movies.." />
+                <input type="submit" value="Go" data-bind="click: search" />
+            </div>
+            <div class="videos-reset">
+                <a href="#" data-bind="click: clearFilters">Clear filters</a>
+            </div>		
+            <div data-bind="foreach: filterCategories">
+                <div class="filter-items">
+                    <a data-bind="click: hideCategory, css: categoryExpander">
+                        <h2 data-bind="text: name"></h2>
+                    </a>
+                    <div data-bind="visible: isExpanded" class="filter-item-criteria">
+                        <ul data-bind="foreach: subItems">
+                            <li><a data-bind="text: value, click: $root.toggleFilter" style="cursor: pointer"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
